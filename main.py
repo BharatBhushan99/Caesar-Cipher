@@ -20,8 +20,23 @@ def ecncrypt(text, shift):
     encrypted_message += alphabet[new_index]
     
   print(f"Here's your encrypted result: {encrypted_message}")
-    
+
+def decrypt(text, shift):
+
+  decrypted_message = ""
+
+  for letter in text:
+    current_index = alphabet.index(letter)
+    new_index = current_index - shift
+
+    decrypted_message += alphabet[new_index]
+
+  print(f"Here's your decrypted message: {decrypted_message}")
+  
 if direction == 'encode':
   ecncrypt(message, shift)
-
+elif direction == 'decode':
+  decrypt(message, shift)
+else:
+  print("Incorrect input.")
   
